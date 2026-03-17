@@ -1,6 +1,10 @@
 #! /usr/bin/env bash
 
-SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+# add project to path
+SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+bash $SCRIPT_DIR/add_path.sh
+source "$HOME/.bashrc"
+hf_bucket --help
 
 # Install linux packages
 apt-get update
