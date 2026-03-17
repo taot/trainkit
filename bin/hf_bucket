@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
+uv run --project "${SCRIPT_DIR}/.." python -m trainkit.hf_bucket.main "$@"
