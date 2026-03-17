@@ -61,15 +61,15 @@ NOTES:
 - `hf_bucket` walks upward from `<directory>` until it finds `.hf_bucket.json`, and treats that as the initialized root.
 - `<directory>` must be inside that root (otherwise it errors).
 
-## Development
+### Development
 
-### Run tests
+#### Run tests
 
 ```bash
 uv run pytest
 ```
 
-### Integration tests (Hugging Face)
+#### Integration tests (Hugging Face)
 
 Integration tests are skipped by default. To run them you must enable:
 
