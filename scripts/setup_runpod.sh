@@ -30,7 +30,7 @@ uv sync
 
 # add project to path
 bash $SCRIPT_DIR/add_path.sh
-source "$HOME/.bashrc"
+export PATH="$PATH:$PROJ_DIR/bin"
 hf_bucket --help
 
 # wandb
@@ -42,10 +42,10 @@ wandb login
 # Setup nanochat      #
 #######################
 
-# clone nanochat repo
-# cd $HOME
-# git clone https://github.com/taot/nanochat.git
-# cd nanochat
+clone nanochat repo
+cd $HOME
+git clone https://github.com/taot/nanochat.git
+cd nanochat
 
-# # install python packages
-# uv sync --extra gpu
+# install python packages
+uv sync --extra gpu

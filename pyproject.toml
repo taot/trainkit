@@ -10,7 +10,8 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "huggingface_hub>=1.7.0",
-    "typer>=0.24"
+    "typer>=0.24",
+    "wandb>=0.25.1",
 ]
 
 [dependency-groups]
