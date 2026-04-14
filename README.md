@@ -10,23 +10,15 @@ Clone the repo:
 git clone https://github.com/taot/trainkit.git
 ```
 
-Add the bin directory to PATH:
-
-```
-echo 'export PATH=$PATH:~/trainkit/bin' >> ~/.bashrc
-```
-
 Run the setup script:
 
 ```
 bash ~/trainkit/scripts/setup_runpod.sh
 ```
 
-## hf_bucket
+## hf_bucket for nanochat on cloud GPU
 
-### Setup
-
-Install `uv`:
+Install `uv` if not already installed:
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
@@ -36,9 +28,38 @@ Inside the repo:
 uv sync
 ```
 
-Append this to `~/.bashrc`:
+Add the bin directory to PATH if not already done:
 ```
-export PATH=$PATH:<repo_directory>/bin
+echo 'export PATH=$PATH:~/trainkit/bin' >> ~/.bashrc
+```
+
+```
+hf_bucket init librakevin/nanochat-training-checkpoints nanochat-training-checkpoints
+
+```
+
+```
+cd nanochat-training-checkpoints
+hf_bucket sync down 20260315
+```
+
+## hf_bucket
+
+### Setup
+
+Install `uv` if not already installed:
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Inside the repo:
+```bash
+uv sync
+```
+
+Add the bin directory to PATH if not already done:
+```
+echo 'export PATH=$PATH:~/trainkit/bin' >> ~/.bashrc
 ```
 
 ### Initialize a bucket on local
