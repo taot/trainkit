@@ -16,33 +16,6 @@ Run the setup script:
 bash ~/trainkit/scripts/setup_runpod.sh
 ```
 
-## hf_bucket for nanochat on cloud GPU
-
-Install `uv` if not already installed:
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-Inside the repo:
-```bash
-uv sync
-```
-
-Add the bin directory to PATH if not already done:
-```
-echo 'export PATH=$PATH:~/trainkit/bin' >> ~/.bashrc
-```
-
-```
-hf_bucket init librakevin/nanochat-training-checkpoints nanochat-training-checkpoints
-
-```
-
-```
-cd nanochat-training-checkpoints
-hf_bucket sync down 20260315
-```
-
 ## hf_bucket
 
 ### Setup
@@ -117,3 +90,9 @@ HF_BUCKET_RUN_INTEGRATION_TESTS=1 uv run pytest -k integration
 ```
 
 They require working Hugging Face credentials and will create/use a test bucket named `hf_bucket_test`.
+
+## nanochat
+
+nanochat specific documents:
+
+- [Run Base Evaluation](docs/nanochat/run_base_eval.md)
