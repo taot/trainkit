@@ -2,7 +2,25 @@
 
 Toolkits to help with training models on Cloud GPUs.
 
-## Setup scripts for cloud GPU
+## Setup cloud GPU
+
+Clone the repo:
+
+```
+git clone https://github.com/taot/trainkit.git
+```
+
+Add the bin directory to PATH:
+
+```
+echo 'export PATH=$PATH:~/trainkit/bin' >> ~/.bashrc
+```
+
+Run the setup script:
+
+```
+bash ~/trainkit/scripts/setup_runpod.sh
+```
 
 ## hf_bucket
 
