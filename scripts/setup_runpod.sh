@@ -29,7 +29,11 @@ source $HOME/.local/bin/env
 print_banner "Configuring git"
 git config --global user.email "librakevin@gmail.com"
 git config --global user.name "Terry Tao"
+git config --global credential.helper store     # configure git to store credentials (also used by huggingface cli)
 
+# huggingface
+print_banner "Configuring huggingface"
+curl -LsSf https://hf.co/cli/install.sh | bash
 
 #######################
 # Setup this project  #
@@ -50,6 +54,10 @@ hf_bucket --help
 print_banner "Configuring wandb"
 source .venv/bin/activate
 wandb login
+
+# hugginface
+print_banner "Logging into hugginface"
+hf auth login
 
 
 #######################
